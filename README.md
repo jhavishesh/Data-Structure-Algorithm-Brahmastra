@@ -21,5 +21,17 @@
 •	Dequeue\
 •	Tree\
 •	Binary Search Tree\
-•	Heap
+•	Heap\
+•	Graph\
+•	Greedy\
+•	Bactracking\
+•	Dynamic Programming\
+•	Trie\
+•	Segment and Binary Indexed Trees\
+•	Disjoint Set
+
+
+
+## If you feel this repo can help you in your Placements then Do share with your friends 🤝 and learn and grow together ✌️.
+
 
