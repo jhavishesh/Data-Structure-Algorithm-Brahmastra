@@ -46,3 +46,35 @@ public:
         
         return helper(N,arr,sum);
     }
+    
+    
+//Another Simple Approach without use of for loop
+    
+class Solution{   
+public:
+    int dp[101][10001];
+    bool solve(int N,int arr[],int sum){
+        if(sum == 0)
+            return true;
+        
+        if(N == 0)
+            return false;
+        
+        if(dp[N][sum] != -1)
+            return dp[N][sum];
+        
+        
+        if(arr[N-1] <= sum)
+           return dp[N][sum] = solve(N-1,arr,sum-arr[N-1]) || solve(N-1,arr,sum);
+        
+        else if(arr[N-1] > sum)
+           return dp[N][sum] = solve(N-1,arr,sum);
+        
+        
+    }
+    bool isSubsetSum(int N, int arr[], int sum){
+        
+        memset(dp,-1,sizeof(dp));
+        return solve(N,arr,sum);
+    }
+};
