@@ -1,6 +1,7 @@
-/* https://www.javatpoint.com/why-string-is-immutable-or-final-in-java#:~:text=The%20String%20is%20immutable%20in,it%20makes%20the%20String%20immutable.  */
+# https://www.javatpoint.com/why-string-is-immutable-or-final-in-java#:~:text=The%20String%20is%20immutable%20in,it%20makes%20the%20String%20immutable.  
 
-//Solution:
+
+
 
 In object-oriented programming, the immutable string or objects that cannot be modified once it is created.
 But we can only change the reference to the object. We restrict to change the object itself. 
@@ -15,6 +16,7 @@ class ImmutableString{
         System.out.println(NewString);    
     }    
 }    
+
 
 
 ![immutable_01](https://user-images.githubusercontent.com/61939693/149388015-78aa05d9-b878-45e2-9c19-25aef625bd3d.jpg)
