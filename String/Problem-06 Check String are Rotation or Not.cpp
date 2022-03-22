@@ -26,4 +26,5 @@ int main()
       cout<<"Not a Rotation of one another";
 
 return 0;
+  
 }
