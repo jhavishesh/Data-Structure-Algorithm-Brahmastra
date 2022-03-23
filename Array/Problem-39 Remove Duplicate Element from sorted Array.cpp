@@ -2,6 +2,7 @@
 
 //Solution:
 
+
 //Don't try to remove the duplicated elements. The thing that we need to do here is to place all the n distinct elements in first n places and return the size n.
 
 int remove_duplicate(int a[],int n){
