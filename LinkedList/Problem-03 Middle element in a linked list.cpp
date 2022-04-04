@@ -3,6 +3,7 @@
 
 //Solution:
 
+
 int getMiddle(Node *head)
     {
         Node *slow=head,*fast=head;
