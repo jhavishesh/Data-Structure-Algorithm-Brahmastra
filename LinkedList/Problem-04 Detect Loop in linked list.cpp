@@ -10,5 +10,6 @@
            fast=fast->next->next;
            if(slow==fast) return true; // loop detected
        }
+  
        return false;
     }
