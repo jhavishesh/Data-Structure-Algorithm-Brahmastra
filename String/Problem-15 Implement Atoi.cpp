@@ -3,6 +3,35 @@
 
 //Solution:
 
+
+
+//Updated and clean code of the below code.
+int atoi(string str) {
+        
+        int i(0),flag(0),res(0);
+        
+        if(str[0]=='-')
+        {
+            i++;
+            flag++;
+        }
+        for(;i<str.length();i++)
+        {
+            if(str[i]>='0' and str[i]<='9')
+                res=(res*10)+str[i]-'0';
+            else
+                return -1;
+        }
+        
+        if(flag)
+            res*=-1;
+        
+        
+        return res;
+    }
+
+
+
 int atoi(string str) {
         
         int res(0);  //For the Final Result
@@ -30,4 +59,5 @@ int atoi(string str) {
         
         
         return res;  // return the result.
+       
     }
