@@ -16,6 +16,7 @@ bool prime(int n)
 
 return true;
 }
+
 int main()
 {
     int lw,up;
