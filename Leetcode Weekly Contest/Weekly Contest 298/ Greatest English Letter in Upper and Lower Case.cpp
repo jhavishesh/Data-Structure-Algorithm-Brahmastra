@@ -8,6 +8,7 @@ So we start checking from z to a if there exist an uppercase for that lowercase 
 If there exists, it will be the greatest one as we have started from 'z' that is biggest.  */
 
 
+
 string greatestLetter(string s) {
         string a="";
         for(char c='z';c>='a';c--)
