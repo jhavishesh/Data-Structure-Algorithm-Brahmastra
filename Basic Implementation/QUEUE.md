@@ -13,3 +13,8 @@
 ## QUEUE USING LINKEDLIST
 
 ![image](https://user-images.githubusercontent.com/61939693/176863539-66d843b8-fe2c-494d-8bb3-d75277f4f6ec.png)
+
+
+## APPLICATION OF QUEUE
+
+![image](https://user-images.githubusercontent.com/61939693/176864355-98e4eef6-1b6d-42ea-a977-3227dd386618.png)
