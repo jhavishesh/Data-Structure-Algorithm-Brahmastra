@@ -5,15 +5,19 @@
 
 string reverseWords(string S) 
     { 
-        for(int i=0,j=0;i<=S.size();i++){
-            
-            if(S[i]=='.' || i==S.size())
-            {
-                reverse(S.begin()+j,S.begin()+i);
-                j=i+1;
-            }
-        }
-        reverse(S.begin(),S.end());
+        string result="";
+        string temp="";
         
-        return S;
-    } 
+        for(int i=S.length()-1;i>=0;i--)
+        {
+            if(S[i]=='.'){
+                temp=temp+S[i];
+                result=result+temp;
+                temp="";
+            }
+            else
+                temp=S[i]+temp;
+        }
+        result=result+temp;
+        
+        return result;
