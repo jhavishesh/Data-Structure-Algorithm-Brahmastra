@@ -1,3 +1,5 @@
+//https://practice.geeksforgeeks.org/problems/remove-loop-in-linked-list/1
+
 //Solution:
 
 void removeLoop(Node* head)
