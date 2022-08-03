@@ -2,7 +2,36 @@
 
 
 
-// Solution: 
+// optimal Solution: 
+
+ int majorityElement(int a[], int size)
+    {
+        
+        int vote(0),maj(0);
+        
+        for(int i=0;i<size;i++)
+        {
+            if(vote==0)
+            {
+                maj=a[i];
+                vote=1;
+            }
+            else if(maj==a[i])
+                vote++;
+            
+            else
+                vote--;
+        }
+        vote=0;
+        
+        for(int i=0;i<size;i++)
+        {
+            if(maj==a[i])
+                vote++;
+        }
+        return vote>(size/2)?maj:-1;
+        
+    }
 
 int majorityElement(int a[], int size)
     {
