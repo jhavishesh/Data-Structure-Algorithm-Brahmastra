@@ -3,15 +3,15 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int Nto1(int n)
+void NToOne(int n)
 {   
     if(n==0)
-        return 1;
+        return;
     
     
     cout<<n<<" ";
     
-    return Nto1(n-1);
+    NToOne(n-1);
        
 }
 
@@ -19,7 +19,7 @@ int main()
 {   
     int n;
     cin>>n;
-    Nto1(n);
+    NToOne(n);
     return 0;
 }
 
@@ -29,12 +29,12 @@ int main()
 #include<bits/stdc++.h>
 using namespace std;
 
-int Nto1(int n)
+void OneToN(int n)
 {   
     if(n==0)
-        return 1;
+        return;
     
-    Nto1(n-1);
+    OneToN(n-1);
     
     cout<<n<<" ";
        
@@ -44,6 +44,6 @@ int main()
 {   
     int n;
     cin>>n;
-    Nto1(n);
+    OneToN(n);
     return 0;
 }
