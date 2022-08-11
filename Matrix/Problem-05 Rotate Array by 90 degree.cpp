@@ -1,7 +1,7 @@
 /* https://practice.geeksforgeeks.org/problems/rotate-by-90-degree0356/1/# */
 
 
-//Solution:
+//Solution:[AnticlockWise]
 
 void rotate(vector<vector<int> >& matrix)
 {   
@@ -24,3 +24,27 @@ void rotate(vector<vector<int> >& matrix)
         //end--;
     }
     
+//Solution [Clockwise]
+    
+        void rotate(vector<vector<int>>& matrix) 
+        {
+        
+        int n=matrix.size();
+
+        
+        
+        for(int i=0;i<n;i++)
+        {
+            for(int j=i;j<n;j++)
+            {
+                swap(matrix[j][i],matrix[i][j]);
+            }
+        }
+        
+        for(int i=0;i<n;i++)
+        {
+            reverse(matrix[i].begin(),matrix[i].end());
+        }
+        
+    }
+}
