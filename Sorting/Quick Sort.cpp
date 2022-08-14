@@ -1,37 +1,54 @@
-int partition (int arr[], int low, int high)
+//Considering the first element as the pivot element
+
+
+
+#include <iostream>
+using namespace std;
+int partition(int arr[],int low,int high)
 {
-    int pivot = arr[high]; // pivot
-    int i = (low - 1); // Index of smaller element and indicates the right position of pivot found so far
- 
-    for (int j = low; j <= high - 1; j++)
+    int i=low;
+    int j=high;
+    int pivot=arr[low];
+
+    while(i<j)
     {
-        // If current element is smaller than the pivot
-        if (arr[j] < pivot)
+        if(pivot>=arr[i])
+            i++;
+        if(pivot<=arr[j])
+            j--;
+        
+        if(i<j)
+            swap(arr[i],arr[j]);
+    }
+    swap(arr[low],arr[j]);
+
+    return j;
+}
+void quicksort(int arr[],int low,int high)
+{
+    if(low<high)
+    {
+        int pivot=partition(arr,low,high);
+
+        quicksort(arr,low,pivot-1);
+        quicksort(arr,pivot+1,high);
+    }
+}
+void dp(int arr[],int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+}
+int main() {
+        int n;
+        cin>>n;
+        int arr[n];
+        for(int i=0;i<n;i++)
         {
-            i++; // increment index of smaller element
-            swap(&arr[i], &arr[j]);
+            cin>>arr[i];
         }
-    }
-    swap(&arr[i + 1], &arr[high]);
-    return (i + 1);
+        quicksort(arr,0,n-1);
+        dp(arr,n);
 }
- 
-/* The main function that implements QuickSort
-arr[] --> Array to be sorted,
-low --> Starting index,
-high --> Ending index */
-void quickSort(int arr[], int low, int high)
-{
-    if (low < high)
-    {
-        /* pi is partitioning index, arr[p] is now
-        at right place */
-        int pi = partition(arr, low, high);
- 
-        // Separately sort elements before
-        // partition and after partition
-        quickSort(arr, low, pi - 1);
-        quickSort(arr, pi + 1, high);
-    }
-}
- 
