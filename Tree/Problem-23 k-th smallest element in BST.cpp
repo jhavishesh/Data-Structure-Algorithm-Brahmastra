@@ -9,21 +9,25 @@ Approach:  Find Inorder and if cnt==K then we need to assign root->data=res and 
 
 class Solution {
   public:
-    int res=-1,cnt=1;
+    void inorder(Node *root,vector<int>&res)
+    {
+        if(root==NULL)
+            return;
+        
+        inorder(root->left,res);
+        res.push_back(root->data);
+        inorder(root->right,res);
+    }
     int KthSmallestElement(Node *root, int K) {
         
-        if(root==NULL)
-            return 0;
-            
-        KthSmallestElement(root->left,K);
+        vector<int>res;
         
-        if(cnt==K)
-        {
-            res=root->data;
-        }
-        cnt++;
-        KthSmallestElement(root->right,K);
+        inorder(root,res);
         
-        return res;
+        if(K>res.size())
+            return -1;
+        
+        return res[K-1];
+        
     }
 };
