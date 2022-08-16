@@ -27,19 +27,31 @@ int subarraysum(int arr[],int n)
 
 bool subArrayExists(int arr[], int n)
     {
-        //Your code here
-        unordered_map <int ,bool> m;    // map beacause it has O(1)
         
-        int sum=0;
+        unordered_map<int,int>m;
+        int sum(0),flag(0);
+        
+        
+        /* Check 3 condition:
+        1. Either element is 0 
+        2. prefix sum is 0
+        3. prefix sum is repeated i.e 4 and again 4 is came it means there is subarray =0 */
+  
         for(int i=0;i<n;i++)
         {
-            sum+=arr[i]; //prefix sum 
+            sum+=arr[i];
             
-            if(sum==0 || m[sum]==true)    // checking sum value and also whether sum is present in map or not 
-                return true;               // if yes then return true
-            
-            m[sum]=true;   //if sum is not in map then put it into map
-            
+            if(sum==0 || m[sum]==1 || arr[i]==0)
+            {
+                f=1;
+                break;
+            }
+            else
+                m[sum]=1;
         }
-        return false;   // return no sub-array found
+        if(f)
+            return true;
+        else
+            return false;
+       
     }
