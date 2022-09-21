@@ -20,3 +20,4 @@ int main() {
         cin>>a>>b;
         lcm(a,b);
 }
+
