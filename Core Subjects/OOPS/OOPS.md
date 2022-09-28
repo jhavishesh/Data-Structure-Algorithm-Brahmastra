@@ -8,4 +8,11 @@ https://www.edureka.co/blog/interview-questions/oops-interview-questions/
 
 ## Diamond Problem
 
+![Screenshot (2369)](https://user-images.githubusercontent.com/61939693/192770640-9140efce-dc8a-4de5-beff-570f511d1291.png)
+
+
+## Solution for Diamond Problem
+
+![Screenshot (2370)](https://user-images.githubusercontent.com/61939693/192770778-7a64e29c-4e7f-4ad8-9d81-b42a70a23a1a.png)
+
 
