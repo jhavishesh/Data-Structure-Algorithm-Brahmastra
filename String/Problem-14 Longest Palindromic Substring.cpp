@@ -3,23 +3,27 @@
 
 //Solution:
 
-string longestPalindrome(string S){
-        
-        int n= S.length();
-        
-        string temp,res;
-        
-        for(int i=0;i<n;i++)
+int valid(string &s, int l, int r) 
+   {
+        while(l >= 0 and r < s.size() and s[l] == s[r]) {
+            l--;
+            r++;
+        }
+        return r-l-1; //length of palindrome string
+    }
+    
+    string longestPalindrome(string s) {
+        int n = s.size(), mx_len = 0, start = 0;
+        for(int i=0; i<n; i++) 
         {
-            for(int j=i;j<n;j++)
-            {
-                temp= S.substr(i,j-i+1);  //finding the substring 
-                
-                if( temp==string(temp.rbegin(),temp.rend()) &&  temp.size()>res.size() )  // checking  start and end char is same and also inbetween character are palindrome or not
-                    
-                    res=temp;
+            int len1 = valid(s, i, i); ///racecar
+            int len2 = valid(s, i, i+1);//aabaa
+            int len = max(len1, len2);
+            if(len > mx_len) {
+                mx_len = len;   //finding the substring from string 
+                start = i - ((mx_len-1)/2);
             }
         }
-        
-        return res; //return the result.
+        string ans = s.substr(start, mx_len);
+        return ans;
     }
