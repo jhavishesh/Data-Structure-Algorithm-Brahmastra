@@ -7,7 +7,7 @@ void seive(int n) {
         int prime[n+1];  // for marking the non-prime
         memset(prime,-1,sizeof(prime));  //setting the initial value
         
-        for(int i=2;i<=n;i++)
+        for(int i=2;i*i<=n;i++)
         {
             if(prime[i]==-1)  
             {
