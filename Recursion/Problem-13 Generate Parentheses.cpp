@@ -7,6 +7,7 @@
             
             return;
         }
+  
         
         if(open<n)
             findall(s+"(",open+1,close,res,n);
