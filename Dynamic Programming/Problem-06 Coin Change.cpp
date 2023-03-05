@@ -2,29 +2,29 @@
 
 // Solution:
 
-long long int count(int S[], int m, int n) {
-    
-   long long int dp[m+1][n+1];   // for the tabulation
-   
-    
-    for(int j=0;j<m+1;j++)
-        dp[j][0]=1;   //Intiliazation if sum is 0 then we have 1 choice to not include any coins
-        
-    for(int i=0;i<n+1;i++)
-        dp[0][i]=0;  //Intiliazation if n=0 then we simply return 0
-        
-    
-    for(int i=1;i<m+1;i++)
+ long long int dp[1001][1001];
+    long long int helper(int coins[],int N,int sum)
     {
-        for(int j=1;j<n+1;j++)
-        {
-            if(S[i-1]<=j)
-                dp[i][j]=dp[i][j-S[i-1]] + dp[i-1][j];     //  Including the coins + Excluding the coins
+        if(N==0)
+            return 0;
+        
+        if(sum==0)
+            return 1;
+        
+        if(dp[N][sum]!=-1)
+            return dp[N][sum];
+        
+        else if(coins[N-1]<=sum)
+            return dp[N][sum]= helper(coins,N,sum-coins[N-1])+helper(coins,N-1,sum);  // we need to count the maximum possibility so we add both choice and non choice elemeent 
+        // Also it is a varition of the unbounded knapsack problem.
+        
+        else
+            return dp[N][sum]=helper(coins,N-1,sum);
             
-            else 
-                dp[i][j]= dp[i-1][j];     // Exclude the coins
-        }
     }
-    return dp[m][n];  // return the result.
-    
-    }  
+    long long int count(int coins[], int N, int sum) {
+
+        memset(dp,-1,sizeof(dp));
+        
+        return helper(coins,N,sum);
+    }
