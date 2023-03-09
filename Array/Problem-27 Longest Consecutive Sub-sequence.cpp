@@ -53,3 +53,39 @@ int findLongestConseqSubseq(int arr[], int N)
       }
       return longeststreak;   // returning the maximum streak value
     }
+
+
+//Simpler Version of Variables
+
+int findLongestConseqSubseq(int arr[], int N)
+    {
+        int lon(0);
+        
+        set<int>s;
+        
+        for(int i=0;i<N;i++)
+        {
+            s.insert(arr[i]);
+        }
+        int curr_num;
+        int curr_str;
+        for(auto x:s)
+        {
+            if(!s.count(x-1))
+            {
+                curr_num=x;
+                curr_str=1;
+            }
+            
+            
+            while(s.count(curr_num+1))
+            {
+                curr_num++;
+                curr_str++;
+            }
+            
+            
+            lon=max(lon,curr_str);
+        }
+        return lon;
+    }
