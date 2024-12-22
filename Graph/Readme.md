@@ -2,6 +2,13 @@
 
 This cheatsheet provides quick, easy-to-remember logic for common graph algorithms.
 
+## 0. **Print Adjacency list**
+
+[Learn More](https://www.geeksforgeeks.org/problems/print-adjacency-list-1587115620/1)
+
+<img width="1463" alt="image" src="https://github.com/user-attachments/assets/e860925c-7b9f-4229-abdf-ae870da9667c" />
+
+
 ## 1. **Depth First Search (DFS)**
 **Core Logic**: Explore as deep as possible from the starting point. Once you can't go deeper, backtrack and explore other paths.
 - **Time Complexity**: O(V + E)
